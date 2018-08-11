@@ -1,8 +1,7 @@
-package parsertest;
+package parser;
 
 import org.junit.Assert;
 import org.junit.Test;
-import parser.Parser;
 import parser.exception.MyParserException;
 
 import java.util.Arrays;
