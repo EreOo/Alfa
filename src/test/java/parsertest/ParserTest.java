@@ -1,7 +1,7 @@
 package parsertest;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 import parser.Parser;
 import parser.exception.MyParserException;
 
@@ -22,7 +22,7 @@ public class ParserTest {
         Assert.assertEquals(actual,expected);
     }
 
-    @Test(expectedExceptions = MyParserException.class)
+    @Test(expected = MyParserException.class)
     public void checkException() {
         new Parser().getNumbersLineFromFile(INCORRECT_FILE_PATH);
     }
