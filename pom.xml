@@ -29,6 +29,13 @@
         </dependency>
 
         <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>4.11.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.jbehave</groupId>
             <artifactId>jbehave-core</artifactId>
             <version>4.3.5</version>
