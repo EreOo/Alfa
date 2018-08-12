@@ -1,9 +1,8 @@
 package web.pages;
 
 import com.codeborne.selenide.Condition;
-import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
+import static web.locators.ProductPageLocators.getProductTitle;
 
 /**
  * Created Vladimir Shekhavtsov.
@@ -11,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class ProductPage {
 
     public ProductPage checkTitle(String title) {
-        $(By.className("n-title__text")).shouldHave(Condition.text(title));
+        getProductTitle().shouldHave(Condition.text(title));
         return this;
     }
 

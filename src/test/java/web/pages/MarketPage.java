@@ -1,74 +1,76 @@
 package web.pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import util.TimeOut;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.refresh;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static web.locators.MarketPageLocators.*;
 
 /**
  * Created Vladimir Shekhavtsov.
  */
 public class MarketPage {
 
+    /**
+     * Yandex marked ask user location. Refresh page ignored and hide this pop-up.
+     *
+     * @return MarketPage for next work with this page.
+     */
     public MarketPage skipSelectLocation() {
         refresh();
         return this;
     }
 
     public MarketPage clickElectronics() {
-        $(By.cssSelector("li[data-department='Электроника']")).click();
+        getElectronicsButton().click();
         return this;
     }
 
-    public MarketPage clickProduct(String product) {
-        $(By.cssSelector("div[data-reactid='8']")).$$(By.tagName("a")).findBy(Condition.text(product)).click();
+    public MarketPage clickProductType(String product) {
+        getProductTypeLeftMenu(product).click();
         return this;
     }
 
     public MarketPage setPriceFrom(String minPrice) {
-        SelenideElement input = $(By.id("glpricefrom"));
+        SelenideElement input = getInputPriceFrom();
         input.clear();
         input.setValue(minPrice);
         return this;
     }
 
     public MarketPage setPriceTo(String maxPrice) {
-        SelenideElement input = $(By.id("glpriceto"));
+        SelenideElement input = getInputPriceTo();
         input.clear();
         input.setValue(maxPrice);
         return this;
     }
 
     public MarketPage selectBrand(String brand) {
-        SelenideElement element =
-                $(By.cssSelector("fieldset[data-reactid='64']")).$$(By.tagName("li")).findBy(Condition.text(brand)).$(By.tagName("a"));
-        ((JavascriptExecutor) getWebDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        SelenideElement element = getCheckBoxBrand(brand);
+        scrollTo(element);
         element.click();
-        //TODO VS: hide in another method.
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            System.out.println("***********Timeout is broken!*******");
-        }
-//        $(By.name("Производитель " +brand)).click();
-//        $(By.cssSelector("fieldset[data-reactid='64']")).$$(By.tagName("li")).findBy(Condition.text(brand)).$(By.tagName("div")).$(By.tagName("a")).click();
-//        $$(By.tagName("a")).findBy(Condition.text("Samsung"));
-//        $(By.xpath(".//*[contains(text(),'Производитель Samsung')]"));
+        //wait refresh product list.
+        TimeOut.wait(3000);
         return this;
     }
 
-    public ProductPage clickDevice(String name) {
-        $(By.cssSelector("a[title='" + name + "']")).click();
+    public ProductPage clickProduct(String name) {
+        getProduct(name).click();
         return new ProductPage();
     }
 
+    /**
+     * Specific method for get name product how String.
+     *
+     * @return name of first product in list.
+     */
     public String getNameFirstDevice() {
-        return $(By.className("n-snippet-cell2__title")).getText();
+        return getFirstProductFromList().getText();
     }
 
-
+    private void scrollTo(SelenideElement element) {
+        ((JavascriptExecutor) getWebDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
 }

@@ -15,6 +15,7 @@ import web.pages.ProductPage;
 public class YandexMarketSteps extends Steps {
     private static final String SITE_URL = "https://yandex.ru";
     private String firstDeviceName;
+    private ProductPage productPage;
 
     @Given("User open yandex market and select filters (<device>, <brand>, <min_price>, <max_price>)")
     public void selectFilters(@Named("device") String device, @Named("brand") String brand,
@@ -23,7 +24,7 @@ public class YandexMarketSteps extends Steps {
                 .clickMarketButton()
                 .skipSelectLocation()
                 .clickElectronics()
-                .clickProduct(device)
+                .clickProductType(device)
                 .setPriceFrom(minPrice)
                 .setPriceTo(maxPrice)
                 .selectBrand(brand);
@@ -33,11 +34,11 @@ public class YandexMarketSteps extends Steps {
     public void rememberProductNameAndClick() {
         MarketPage marketPage = new MarketPage();
         firstDeviceName = marketPage.getNameFirstDevice();
-        marketPage.clickDevice(firstDeviceName);
+        productPage = marketPage.clickProduct(firstDeviceName);
     }
 
     @Then("User see correct page")
     public void checkProductName() {
-        new ProductPage().checkTitle(firstDeviceName);
+        productPage.checkTitle(firstDeviceName);
     }
 }

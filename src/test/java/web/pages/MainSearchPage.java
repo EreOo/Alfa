@@ -1,8 +1,8 @@
 package web.pages;
 
-import org.openqa.selenium.By;
+import web.pages.base.BasePage;
 
-import static com.codeborne.selenide.Selenide.$;
+import static web.locators.MainSearchPageLocators.getMarketButton;
 
 /**
  * Created Vladimir Shekhavtsov.
@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class MainSearchPage extends BasePage {
 
     public MarketPage clickMarketButton() {
-        $(By.cssSelector("a[data-id = 'market']")).click();
+        getMarketButton().click();
         return new MarketPage();
     }
 }
