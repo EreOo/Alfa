@@ -1,9 +1,12 @@
 package parser;
 
 
-import parser.exception.MyParserException;
+import exception.MyParserException;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,8 +1,8 @@
 package parser;
 
+import exception.MyParserException;
 import org.junit.Assert;
 import org.junit.Test;
-import parser.exception.MyParserException;
 
 import java.util.Arrays;
 import java.util.List;

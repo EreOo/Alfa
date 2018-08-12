@@ -1,4 +1,4 @@
-package parser.exception;
+package exception;
 
 /**
  * Created Vladimir Shekhavtsov.

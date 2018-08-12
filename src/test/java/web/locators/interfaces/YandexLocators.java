@@ -8,9 +8,14 @@ import static com.codeborne.selenide.Selenide.$;
 /**
  * Created Vladimir Shekhavtsov.
  */
-public class YandexLocators implements BaseSearchLocators {
+public class YandexLocators implements IBaseSearchLocators {
     @Override
     public SelenideElement marketButton() {
         return $(By.cssSelector("a[data-id = 'market']"));
+    }
+
+    @Override
+    public SelenideElement inputSearchField() {
+        return $(By.id("text"));
     }
 }
