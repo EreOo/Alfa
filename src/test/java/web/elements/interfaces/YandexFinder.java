@@ -1,10 +1,9 @@
 package web.elements.interfaces;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
-import static web.elements.locators.YandexPageLocators.SEARCH_FIELD;
+import static web.elements.locators.YandexPageLocators.*;
 
 /**
  * Created Vladimir Shekhavtsov.
@@ -13,11 +12,16 @@ import static web.elements.locators.YandexPageLocators.SEARCH_FIELD;
 public class YandexFinder implements IBaseSearchFinder {
     @Override
     public SelenideElement marketButton() {
-        return $(By.cssSelector("a[data-id = 'market']"));
+        return $(MARKET_BUTTON);
     }
 
     @Override
     public SelenideElement inputSearchField() {
         return $(SEARCH_FIELD);
+    }
+
+    @Override
+    public SelenideElement firstBankLink() {
+        return $(BANK_LINK);
     }
 }

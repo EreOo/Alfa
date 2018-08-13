@@ -19,6 +19,10 @@ public class MainSearchPageFinder {
         elements = isYandex() ? new YandexFinder() : new GoogleFinder();
     }
 
+    private boolean isYandex() {
+        return getWebDriver().getCurrentUrl().contains(YANDEX_RU);
+    }
+
     public SelenideElement getMarketButton() {
         return elements.marketButton();
     }
@@ -27,7 +31,7 @@ public class MainSearchPageFinder {
         return elements.inputSearchField();
     }
 
-    private boolean isYandex() {
-        return getWebDriver().getCurrentUrl().contains(YANDEX_RU);
+    public SelenideElement getFirstLink() {
+        return elements.firstBankLink();
     }
 }

@@ -10,4 +10,6 @@ public interface IBaseSearchFinder {
     SelenideElement marketButton();
 
     SelenideElement inputSearchField();
+
+    SelenideElement firstBankLink();
 }

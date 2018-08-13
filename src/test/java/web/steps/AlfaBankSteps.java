@@ -17,7 +17,8 @@ public class AlfaBankSteps {
     public void selectFilters(@Named("search site") String url) {
         new Runner().openSite(url);
         new MainSearchPage()
-                .enterSearchQuery("Альфа банк");
+                .enterSearchQuery("Альфа банк")
+                .clickFirstLink();
 
     }
 

@@ -9,4 +9,6 @@ import org.openqa.selenium.By;
 public class GooglePageLocators {
 
     public static final By SEARCH_FIELD = By.id("lst-ib");
+    public static final By BANK_LINK = By.cssSelector("a[href='https://alfabank.ru/']");
+
 }
