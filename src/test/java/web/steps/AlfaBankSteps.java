@@ -27,7 +27,8 @@ public class AlfaBankSteps {
     @When("User go to About working in the bank")
     public void rememberProductNameAndClick() {
         bankPage.closeTabAndSwitchTab()
-                .clickVacanciesButton();
+                .clickVacanciesButton()
+                .clickAboutWorking();
     }
 
     @Then("User save text to file")

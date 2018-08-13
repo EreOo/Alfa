@@ -12,7 +12,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
  * Finder return elements for Yandex or Google.
  */
 public class MainSearchPageFinder {
-    public static final String YANDEX_RU = "yandex.ru";
+    private static final String YANDEX_RU = "yandex.ru";
     private IBaseSearchFinder elements;
 
     public MainSearchPageFinder() {
