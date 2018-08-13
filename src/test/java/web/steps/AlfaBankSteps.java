@@ -11,9 +11,9 @@ import web.pages.AlfaBankPage;
 import web.pages.JobBankPage;
 import web.pages.MainSearchPage;
 
-import java.util.Calendar;
-
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static util.DateUtil.getDate;
+import static util.UrlUtil.getSearchSite;
 
 /**
  * Created Vladimir Shekhavtsov.
@@ -49,26 +49,11 @@ public class AlfaBankSteps {
                 + "_Browser-" + getBrowser()
                 + "_SearchSite-" + getSearchSite(searchSite);
         new FileSaver().saveTxt(nameFile, aboutTitle, aboutText);
-
     }
 
+    //get browser name for naming file.txt (need for task #3)
     private String getBrowser() {
         return ((RemoteWebDriver) getWebDriver()).getCapabilities().getBrowserName();
-    }
-
-    private String getDate() {
-
-        Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH);
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
-        int hour = calendar.get(Calendar.HOUR);
-        int minute = calendar.get(Calendar.MINUTE);
-        return day + "-" + month + "-" + year + "__" + hour + "-" + minute;
-    }
-
-    private String getSearchSite(String url) {
-        return url.split("[.]")[1];
     }
 
 }
