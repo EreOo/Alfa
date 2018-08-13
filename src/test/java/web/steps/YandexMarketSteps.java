@@ -5,6 +5,7 @@ import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.jbehave.core.steps.Steps;
+import web.configuration.Runner;
 import web.pages.MainSearchPage;
 import web.pages.MarketPage;
 import web.pages.ProductPage;
@@ -20,7 +21,8 @@ public class YandexMarketSteps extends Steps {
     @Given("User open yandex market and select filters (<device>, <brand>, <min_price>, <max_price>)")
     public void selectFilters(@Named("device") String device, @Named("brand") String brand,
                               @Named("min_price") String minPrice, @Named("max_price") String maxPrice) {
-        new MainSearchPage().openSite(SITE_URL)
+        new Runner().openSite(SITE_URL);
+        new MainSearchPage()
                 .clickMarketButton()
                 .skipSelectLocation()
                 .clickElectronics()

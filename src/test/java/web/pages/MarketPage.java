@@ -3,15 +3,20 @@ package web.pages;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.JavascriptExecutor;
 import util.TimeOut;
+import web.locators.MarketPageLocators;
 
 import static com.codeborne.selenide.Selenide.refresh;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static web.locators.MarketPageLocators.*;
 
 /**
  * Created Vladimir Shekhavtsov.
  */
 public class MarketPage {
+    private MarketPageLocators finder;
+
+    public MarketPage() {
+        finder = new MarketPageLocators();
+    }
 
     /**
      * Yandex marked ask user location. Refresh page ignored and hide this pop-up.
@@ -24,31 +29,31 @@ public class MarketPage {
     }
 
     public MarketPage clickElectronics() {
-        getElectronicsButton().click();
+        finder.getElectronicsButton().click();
         return this;
     }
 
     public MarketPage clickProductType(String product) {
-        getProductTypeLeftMenu(product).click();
+        finder.getProductTypeLeftMenu(product).click();
         return this;
     }
 
     public MarketPage setPriceFrom(String minPrice) {
-        SelenideElement input = getInputPriceFrom();
+        SelenideElement input = finder.getInputPriceFrom();
         input.clear();
         input.setValue(minPrice);
         return this;
     }
 
     public MarketPage setPriceTo(String maxPrice) {
-        SelenideElement input = getInputPriceTo();
+        SelenideElement input = finder.getInputPriceTo();
         input.clear();
         input.setValue(maxPrice);
         return this;
     }
 
     public MarketPage selectBrand(String brand) {
-        SelenideElement element = getCheckBoxBrand(brand);
+        SelenideElement element = finder.getCheckBoxBrand(brand);
         scrollTo(element);
         element.click();
         //wait refresh product list.
@@ -57,7 +62,7 @@ public class MarketPage {
     }
 
     public ProductPage clickProduct(String name) {
-        getProduct(name).click();
+        finder.getProduct(name).click();
         return new ProductPage();
     }
 
@@ -67,7 +72,7 @@ public class MarketPage {
      * @return name of first product in list.
      */
     public String getNameFirstDevice() {
-        return getFirstProductFromList().getText();
+        return finder.getFirstProductFromList().getText();
     }
 
     private void scrollTo(SelenideElement element) {

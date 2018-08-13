@@ -12,21 +12,21 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
  * Locators for Yandex or Google.
  */
 public class MainSearchPageLocators {
+    private IBaseSearchLocators elements;
 
-    private static IBaseSearchLocators locators() {
-        return isYandex() ? new YandexLocators() : new GoogleLocators();
+    public MainSearchPageLocators() {
+        elements = isYandex() ? new YandexLocators() : new GoogleLocators();
     }
 
-    private static boolean isYandex() {
-        return getWebDriver().getCurrentUrl().equals("https://www.yandex.ru/");
+    public SelenideElement getMarketButton() {
+        return elements.marketButton();
     }
 
-    public static SelenideElement getMarketButton() {
-        return locators().marketButton();
+    public SelenideElement getInputSearchField() {
+        return elements.inputSearchField();
     }
 
-    public static SelenideElement getInputSearchField() {
-        return locators().inputSearchField();
+    private boolean isYandex() {
+        return getWebDriver().getCurrentUrl().contains("yandex.ru");
     }
-
 }

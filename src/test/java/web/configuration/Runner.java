@@ -1,4 +1,4 @@
-package web.pages.base;
+package web.configuration;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.After;
@@ -9,10 +9,9 @@ import static com.codeborne.selenide.Selenide.open;
 
 /**
  * Created Vladimir Shekhavtsov.
- * Class in this project need for MainSearchPage.
  * All configuration hide there.
  */
-public class BasePage {
+public class Runner {
 
     public MainSearchPage openSite(String url) {
         setConfiguration();

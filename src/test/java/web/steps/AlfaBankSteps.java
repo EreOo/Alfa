@@ -4,6 +4,7 @@ import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
+import web.configuration.Runner;
 import web.pages.MainSearchPage;
 
 /**
@@ -14,7 +15,8 @@ public class AlfaBankSteps {
 
     @Given("User open <search site> and find Alfa bank site")
     public void selectFilters(@Named("search site") String url) {
-        new MainSearchPage().openSite(url)
+        new Runner().openSite(url);
+        new MainSearchPage()
                 .enterSearchQuery("Альфа банк");
 
     }

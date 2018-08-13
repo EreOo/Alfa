@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
  */
 public class ProductPageLocators {
 
-    public static SelenideElement getProductTitle() {
+    public SelenideElement getProductTitle() {
         return $(By.className("n-title__text"));
     }
 }
