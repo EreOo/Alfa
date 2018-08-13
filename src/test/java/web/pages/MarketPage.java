@@ -3,7 +3,7 @@ package web.pages;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.JavascriptExecutor;
 import util.TimeOut;
-import web.locators.MarketPageLocators;
+import web.elements.MarketPageFinder;
 
 import static com.codeborne.selenide.Selenide.refresh;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -12,10 +12,10 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
  * Created Vladimir Shekhavtsov.
  */
 public class MarketPage {
-    private MarketPageLocators finder;
+    private MarketPageFinder finder;
 
     public MarketPage() {
-        finder = new MarketPageLocators();
+        finder = new MarketPageFinder();
     }
 
     /**

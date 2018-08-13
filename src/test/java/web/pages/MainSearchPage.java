@@ -1,7 +1,7 @@
 package web.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import web.locators.MainSearchPageLocators;
+import web.elements.MainSearchPageFinder;
 
 
 /**
@@ -9,10 +9,10 @@ import web.locators.MainSearchPageLocators;
  * Page for Yandex or Google.
  */
 public class MainSearchPage {
-    MainSearchPageLocators finder;
+    MainSearchPageFinder finder;
 
     public MainSearchPage() {
-        finder = new MainSearchPageLocators();
+        finder = new MainSearchPageFinder();
     }
 
     public MarketPage clickMarketButton() {

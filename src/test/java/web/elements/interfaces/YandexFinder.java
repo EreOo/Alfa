@@ -1,14 +1,16 @@
-package web.locators.interfaces;
+package web.elements.interfaces;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
+import static web.elements.locators.YandexPageLocators.SEARCH_FIELD;
 
 /**
  * Created Vladimir Shekhavtsov.
+ * Finder return elements for Yandex.
  */
-public class YandexLocators implements IBaseSearchLocators {
+public class YandexFinder implements IBaseSearchFinder {
     @Override
     public SelenideElement marketButton() {
         return $(By.cssSelector("a[data-id = 'market']"));
@@ -16,6 +18,6 @@ public class YandexLocators implements IBaseSearchLocators {
 
     @Override
     public SelenideElement inputSearchField() {
-        return $(By.id("text"));
+        return $(SEARCH_FIELD);
     }
 }

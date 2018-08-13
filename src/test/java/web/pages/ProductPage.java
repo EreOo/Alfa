@@ -1,7 +1,7 @@
 package web.pages;
 
 import com.codeborne.selenide.Condition;
-import web.locators.ProductPageLocators;
+import web.elements.ProductPageFinder;
 
 
 /**
@@ -9,10 +9,10 @@ import web.locators.ProductPageLocators;
  */
 public class ProductPage {
 
-    private ProductPageLocators finder;
+    private ProductPageFinder finder;
 
     public ProductPage() {
-        finder = new ProductPageLocators();
+        finder = new ProductPageFinder();
     }
 
     public ProductPage checkTitle(String title) {

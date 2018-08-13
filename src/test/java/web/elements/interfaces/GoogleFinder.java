@@ -1,15 +1,16 @@
-package web.locators.interfaces;
+package web.elements.interfaces;
 
 import com.codeborne.selenide.SelenideElement;
 import exception.UnrealizedElementExeption;
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
+import static web.elements.locators.GooglePageLocators.SEARCH_FIELD;
 
 /**
  * Created Vladimir Shekhavtsov.
+ * Finder return elements for Google.
  */
-public class GoogleLocators implements IBaseSearchLocators {
+public class GoogleFinder implements IBaseSearchFinder {
     @Override
     public SelenideElement marketButton() {
         throw new UnrealizedElementExeption("****ERROR!**** This element isn't exist for Google.com");
@@ -17,6 +18,6 @@ public class GoogleLocators implements IBaseSearchLocators {
 
     @Override
     public SelenideElement inputSearchField() {
-        return $(By.id("lst-ib"));
+        return $(SEARCH_FIELD);
     }
 }
