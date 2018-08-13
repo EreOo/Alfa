@@ -1,6 +1,6 @@
 package parser;
 
-import exception.MyParserException;
+import exception.ParserException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -21,7 +21,7 @@ public class ParserTest {
         Assert.assertEquals(actual,expected);
     }
 
-    @Test(expected = MyParserException.class)
+    @Test(expected = ParserException.class)
     public void checkException() {
         new Parser().getNumbersLineFromFile(INCORRECT_FILE_PATH);
     }

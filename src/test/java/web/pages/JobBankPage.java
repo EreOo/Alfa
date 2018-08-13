@@ -16,4 +16,12 @@ public class JobBankPage {
         finder.getAboutWorking().click();
         return this;
     }
+
+    public String getAboutText() {
+        return finder.getAboutText().getText();
+    }
+
+    public String getAboutTitle() {
+        return finder.getAboutTitle().getText();
+    }
 }

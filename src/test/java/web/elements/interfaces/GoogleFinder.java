@@ -1,7 +1,7 @@
 package web.elements.interfaces;
 
 import com.codeborne.selenide.SelenideElement;
-import exception.UnrealizedElementExeption;
+import exception.UnrealizedElementException;
 
 import static com.codeborne.selenide.Selenide.$;
 import static web.elements.locators.GooglePageLocators.BANK_LINK;
@@ -14,7 +14,7 @@ import static web.elements.locators.GooglePageLocators.SEARCH_FIELD;
 public class GoogleFinder implements IBaseSearchFinder {
     @Override
     public SelenideElement marketButton() {
-        throw new UnrealizedElementExeption("****ERROR!**** This element isn't exist for Google.com");
+        throw new UnrealizedElementException("****ERROR!**** This element isn't exist for Google.com");
     }
 
     @Override

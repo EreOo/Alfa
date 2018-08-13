@@ -26,7 +26,7 @@ public class AlfaBankPage {
      *
      * @return alfa bank page for next work with it.
      */
-    public AlfaBankPage closeTabAndSwitchTab() {
+    public AlfaBankPage closeAndSwitchTab() {
         getWebDriver().close();
         switchTo().window(DEF_TAB_INDEX);
         return this;

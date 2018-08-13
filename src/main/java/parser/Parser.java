@@ -1,7 +1,7 @@
 package parser;
 
 
-import exception.MyParserException;
+import exception.ParserException;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -29,7 +29,7 @@ public class Parser {
             int[] array = Arrays.stream(numbers).mapToInt(Integer::parseInt).toArray();
             return Arrays.stream(array).boxed().collect(Collectors.toList());
         } catch (IOException e) {
-            throw new MyParserException("***** Problems with parse file! *******");
+            throw new ParserException("***** Problems with parse file! *******");
         }
     }
 }
