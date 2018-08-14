@@ -19,10 +19,13 @@ public class Runner {
         return new MainSearchPage();
     }
 
+    /**
+     * set configuration from pom.xml
+     */
     private void setConfiguration() {
-        Configuration.browser = "chrome";
-//        Configuration.browser = System.getProperty("browser");
-//        Configuration.remote = System.getProperty("hub");
+        Configuration.browser = System.getProperty("browser");
+        //  add property hub in pom.xml for use it.
+        //  Configuration.remote = System.getProperty("hub");
     }
 
     @After
