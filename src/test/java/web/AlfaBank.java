@@ -19,7 +19,6 @@ import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 /**
  * Created Vladimir Shekhavtsov.
  */
-//TODO VS: refactoring copy-past
 public class AlfaBank extends JUnitStories {
     // specify the configuration, starting from default MostUsefulConfiguration, and changing only what is needed
     @Override

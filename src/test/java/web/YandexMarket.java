@@ -20,7 +20,6 @@ import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
  * Created Vladimir Shekhavtsov.
  */
 public class YandexMarket extends JUnitStories {
-
     // specify the configuration, starting from default MostUsefulConfiguration, and changing only what is needed
     @Override
     public Configuration configuration() {
