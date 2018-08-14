@@ -1,8 +1,9 @@
-package parser;
+package unittest;
 
+import exception.ParserException;
 import org.junit.Assert;
 import org.junit.Test;
-import parser.exception.MyParserException;
+import parser.Parser;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,7 +22,7 @@ public class ParserTest {
         Assert.assertEquals(actual,expected);
     }
 
-    @Test(expected = MyParserException.class)
+    @Test(expected = ParserException.class)
     public void checkException() {
         new Parser().getNumbersLineFromFile(INCORRECT_FILE_PATH);
     }
