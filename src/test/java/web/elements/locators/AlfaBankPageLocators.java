@@ -8,5 +8,8 @@ import org.openqa.selenium.By;
  */
 public class AlfaBankPageLocators {
 
+    private AlfaBankPageLocators() {
+    }
+
     public static final By VACANCIES_BUTTON = By.xpath("//a[text() ='Вакансии']");
 }

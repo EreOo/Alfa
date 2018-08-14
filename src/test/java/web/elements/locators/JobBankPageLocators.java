@@ -8,5 +8,8 @@ import org.openqa.selenium.By;
  */
 public class JobBankPageLocators {
 
+    private JobBankPageLocators() {
+    }
+
     public static final By ABOUT_WORK = By.cssSelector("a[href='/about/']");
 }

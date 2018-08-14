@@ -8,6 +8,9 @@ import org.openqa.selenium.By;
  */
 public class MarketPageLocators {
 
+    private MarketPageLocators() {
+    }
+
     public static final By ELECTRONICS_BUTTON = By.cssSelector("li[data-department='Электроника']");
     public static final By PRODUCT_TYPE_LEFT_MENU = By.cssSelector("div[data-reactid='8']");
     public static final By TYPE_ITEM = By.tagName("a");
@@ -17,5 +20,4 @@ public class MarketPageLocators {
     public static final By BRAND_MENU_ITEM = By.tagName("li");
     public static final By BRAND_ITEM_LINK = By.tagName("a");
     public static final By FIRST_PRODUCT = By.className("n-snippet-cell2__title");
-
 }

@@ -8,6 +8,9 @@ import org.openqa.selenium.By;
  */
 public class YandexPageLocators {
 
+    private YandexPageLocators() {
+    }
+
     public static final By SEARCH_FIELD = By.id("text");
     public static final By MARKET_BUTTON = By.cssSelector("a[data-id = 'market']");
     public static final By BANK_LINK = By.xpath("//*[text() = 'AlfaBank.ru']");

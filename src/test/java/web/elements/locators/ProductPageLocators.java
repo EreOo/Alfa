@@ -8,5 +8,8 @@ import org.openqa.selenium.By;
  */
 public class ProductPageLocators {
 
+    private ProductPageLocators() {
+    }
+
     public static final By PRODUCT_TITLE = By.className("n-title__text");
 }
